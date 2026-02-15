@@ -1,6 +1,5 @@
 package com.example.order_api.dto.request;
 
-import com.example.order_api.entity.OrderStatus;
 import jakarta.validation.constraints.DecimalMin;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -67,7 +66,7 @@ public class OrderRequest {
         this.notes = notes;
     }
 
-    public OrderStatus getStatus() {
+    public String getStatus() {
         return status;
     }
 

@@ -61,7 +61,10 @@ public class OrderService {
     public OrderResponse updateOrder(UUID uuid, OrderRequest request) {
         Order order = orderRepository.findByUuid(uuid).orElseThrow(() -> new RuntimeException("Order not found!"));
 
-        order.setStatus(request.getStatus());
+        if (request.getStatus() != null) {
+            order.setStatus(OrderStatus.valueOf(request.getStatus()));
+        }
+
         if (request.getShippingAddress() != null) {
             order.setShippingAddress(request.getShippingAddress());
         }

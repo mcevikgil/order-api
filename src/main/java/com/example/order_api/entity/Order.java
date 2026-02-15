@@ -36,7 +36,6 @@ public class Order {
     @Column(name = "shipping_address", length = 500)
     private String shippingAddress;
 
-    @Enumerated(EnumType.STRING)
     @Column(name = "payment_method", nullable = false)
     private String paymentMethod;
 
@@ -56,7 +55,7 @@ public class Order {
         if (this.uuid == null) {
             this.uuid = UUID.randomUUID();
         }
-        if (this.orderNumber == null && this.orderNumber.isEmpty()) {
+        if (this.orderNumber == null || this.orderNumber.isEmpty()) {
             String shortUuid = this.uuid.toString().replace("-", "").substring(0, 8).toUpperCase();
             this.orderNumber = "ORD-" + shortUuid;
         }
