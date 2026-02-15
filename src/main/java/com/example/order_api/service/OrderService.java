@@ -7,6 +7,7 @@ import com.example.order_api.dto.response.OrderSummaryResponse;
 import com.example.order_api.entity.Order;
 import com.example.order_api.entity.OrderStatus;
 import com.example.order_api.entity.User;
+import com.example.order_api.exception.ResourceNotFoundException;
 import com.example.order_api.mapper.OrderMapper;
 import com.example.order_api.repository.OrderRepository;
 import com.example.order_api.repository.UserRepository;
@@ -31,7 +32,8 @@ public class OrderService {
 
     @Transactional
     public OrderResponse createOrder(OrderRequest request) {
-        User user = userRepository.findById(request.getUserId()).orElseThrow(() -> new RuntimeException("User not found!"));
+        User user = userRepository.findById(request.getUserId())
+                .orElseThrow(() -> new ResourceNotFoundException("User", "id", request.getUserId()));
         Order order = new Order();
         order.setUser(user);
         order.setTotalAmount(request.getTotalAmount());
@@ -47,19 +49,21 @@ public class OrderService {
     }
 
     public OrderResponseWithUser getOrderByUuid(UUID uuid){
-        Order order = orderRepository.findByUuid(uuid).orElseThrow(() -> new RuntimeException("Order not found!"));
+        Order order = orderRepository.findByUuid(uuid)
+                .orElseThrow(() -> new ResourceNotFoundException("Order", "uuid", uuid));
         return orderMapper.toResponseWithUser(order);
     }
 
     public List<OrderResponse> getUserOrders(Long userId) {
         return orderRepository.findByUserId(userId)
                 .stream()
-                .map(orderMapper::toResponse)  // ← Temel bilgi
+                .map(orderMapper::toResponse)
                 .collect(Collectors.toList());
     }
 
     public OrderResponse updateOrder(UUID uuid, OrderRequest request) {
-        Order order = orderRepository.findByUuid(uuid).orElseThrow(() -> new RuntimeException("Order not found!"));
+        Order order = orderRepository.findByUuid(uuid)
+                .orElseThrow(() -> new ResourceNotFoundException("Order", "uuid", uuid));
 
         if (request.getStatus() != null) {
             order.setStatus(OrderStatus.valueOf(request.getStatus()));
@@ -78,7 +82,8 @@ public class OrderService {
     }
 
     public void cancelOrder(UUID uuid) {
-        Order order = orderRepository.findByUuid(uuid).orElseThrow(() -> new RuntimeException("Order not found!"));
+        Order order = orderRepository.findByUuid(uuid)
+                .orElseThrow(() -> new ResourceNotFoundException("Order", "uuid", uuid));
         order.setStatus(OrderStatus.REJECTED);
         orderRepository.save(order);
     }
