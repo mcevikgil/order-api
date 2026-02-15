@@ -1,6 +1,6 @@
 package com.example.order_api.mapper;
 
-import com.example.order_api.dto.response.UserResponse;
+import com.example.order_api.dto.response.user.UserResponse;
 import com.example.order_api.entity.User;
 import org.springframework.stereotype.Component;
 

@@ -1,30 +1,33 @@
-package com.example.order_api.dto.response;
+package com.example.order_api.dto.response.order;
 
-import com.example.order_api.entity.OrderStatus;
+import com.example.order_api.enums.OrderStatus;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
-public class OrderSummaryResponse {
-    private Long id;
+public class OrderResponse {
     private UUID uuid;
     private String orderNumber;
     private BigDecimal totalAmount;
     private OrderStatus status;
+    private String shippingAddress;
     private LocalDateTime orderDate;
 
     // Constructors
-    public OrderSummaryResponse() {}
+    public OrderResponse() {
+    }
+
+    public OrderResponse(UUID uuid, String orderNumber, BigDecimal totalAmount, OrderStatus status, String shippingAddress, LocalDateTime orderDate) {
+        this.uuid = uuid;
+        this.orderNumber = orderNumber;
+        this.totalAmount = totalAmount;
+        this.status = status;
+        this.shippingAddress = shippingAddress;
+        this.orderDate = orderDate;
+    }
 
     // Getters and Setters
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public UUID getUuid() {
         return uuid;
@@ -56,6 +59,14 @@ public class OrderSummaryResponse {
 
     public void setStatus(OrderStatus status) {
         this.status = status;
+    }
+
+    public String getShippingAddress() {
+        return shippingAddress;
+    }
+
+    public void setShippingAddress(String shippingAddress) {
+        this.shippingAddress = shippingAddress;
     }
 
     public LocalDateTime getOrderDate() {

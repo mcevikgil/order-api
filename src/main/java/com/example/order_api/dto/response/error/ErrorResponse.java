@@ -1,4 +1,4 @@
-package com.example.order_api.dto.response;
+package com.example.order_api.dto.response.error;
 
 import java.time.LocalDateTime;
 

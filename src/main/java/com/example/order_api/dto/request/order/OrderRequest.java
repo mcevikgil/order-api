@@ -1,4 +1,4 @@
-package com.example.order_api.dto.request;
+package com.example.order_api.dto.request.order;
 
 import jakarta.validation.constraints.DecimalMin;
 import jakarta.validation.constraints.NotBlank;

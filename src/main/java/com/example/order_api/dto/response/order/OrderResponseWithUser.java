@@ -1,34 +1,30 @@
-package com.example.order_api.dto.response;
+package com.example.order_api.dto.response.order;
 
-import com.example.order_api.entity.OrderStatus;
+import com.example.order_api.dto.response.user.UserResponse;
+import com.example.order_api.enums.OrderStatus;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
-public class OrderResponse {
+public class OrderResponseWithUser {
     private UUID uuid;
     private String orderNumber;
     private BigDecimal totalAmount;
     private OrderStatus status;
     private String shippingAddress;
+    private String paymentMethod;
+    private String notes;
     private LocalDateTime orderDate;
+    private LocalDateTime updatedAt;
+
+    private UserResponse user;
 
     // Constructors
-    public OrderResponse() {
-    }
-
-    public OrderResponse(UUID uuid, String orderNumber, BigDecimal totalAmount, OrderStatus status, String shippingAddress, LocalDateTime orderDate) {
-        this.uuid = uuid;
-        this.orderNumber = orderNumber;
-        this.totalAmount = totalAmount;
-        this.status = status;
-        this.shippingAddress = shippingAddress;
-        this.orderDate = orderDate;
+    public OrderResponseWithUser() {
     }
 
     // Getters and Setters
-
     public UUID getUuid() {
         return uuid;
     }
@@ -69,11 +65,43 @@ public class OrderResponse {
         this.shippingAddress = shippingAddress;
     }
 
+    public String getPaymentMethod() {
+        return paymentMethod;
+    }
+
+    public void setPaymentMethod(String paymentMethod) {
+        this.paymentMethod = paymentMethod;
+    }
+
+    public String getNotes() {
+        return notes;
+    }
+
+    public void setNotes(String notes) {
+        this.notes = notes;
+    }
+
     public LocalDateTime getOrderDate() {
         return orderDate;
     }
 
     public void setOrderDate(LocalDateTime orderDate) {
         this.orderDate = orderDate;
+    }
+
+    public LocalDateTime getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public void setUpdatedAt(LocalDateTime updatedAt) {
+        this.updatedAt = updatedAt;
+    }
+
+    public UserResponse getUser() {
+        return user;
+    }
+
+    public void setUser(UserResponse user) {
+        this.user = user;
     }
 }

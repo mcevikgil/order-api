@@ -1,10 +1,10 @@
 package com.example.order_api.service;
 
-import com.example.order_api.dto.request.LoginRequest;
-import com.example.order_api.dto.request.RegisterRequest;
-import com.example.order_api.dto.response.LoginResponse;
-import com.example.order_api.dto.response.UserResponse;
-import com.example.order_api.entity.Role;
+import com.example.order_api.dto.request.auth.LoginRequest;
+import com.example.order_api.dto.request.auth.RegisterRequest;
+import com.example.order_api.dto.response.auth.LoginResponse;
+import com.example.order_api.dto.response.user.UserResponse;
+import com.example.order_api.enums.Role;
 import com.example.order_api.entity.User;
 import com.example.order_api.exception.InvalidCredentialsException;
 import com.example.order_api.exception.ResourceAlreadyExistsException;

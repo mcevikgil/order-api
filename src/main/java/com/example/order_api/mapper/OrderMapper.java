@@ -1,13 +1,10 @@
 package com.example.order_api.mapper;
 
-import com.example.order_api.dto.response.OrderResponse;
-import com.example.order_api.dto.response.OrderResponseWithUser;
-import com.example.order_api.dto.response.OrderSummaryResponse;
+import com.example.order_api.dto.response.order.OrderResponse;
+import com.example.order_api.dto.response.order.OrderResponseWithUser;
+import com.example.order_api.dto.response.order.OrderSummaryResponse;
 import com.example.order_api.entity.Order;
 import org.springframework.stereotype.Component;
-
-import java.math.BigDecimal;
-import java.util.UUID;
 
 @Component
 public class OrderMapper {

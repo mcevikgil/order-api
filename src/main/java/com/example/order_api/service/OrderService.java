@@ -1,11 +1,11 @@
 package com.example.order_api.service;
 
-import com.example.order_api.dto.request.OrderRequest;
-import com.example.order_api.dto.response.OrderResponse;
-import com.example.order_api.dto.response.OrderResponseWithUser;
-import com.example.order_api.dto.response.OrderSummaryResponse;
+import com.example.order_api.dto.request.order.OrderRequest;
+import com.example.order_api.dto.response.order.OrderResponse;
+import com.example.order_api.dto.response.order.OrderResponseWithUser;
+import com.example.order_api.dto.response.order.OrderSummaryResponse;
 import com.example.order_api.entity.Order;
-import com.example.order_api.entity.OrderStatus;
+import com.example.order_api.enums.OrderStatus;
 import com.example.order_api.entity.User;
 import com.example.order_api.exception.ResourceNotFoundException;
 import com.example.order_api.mapper.OrderMapper;

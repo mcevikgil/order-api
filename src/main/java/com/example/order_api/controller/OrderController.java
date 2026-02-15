@@ -1,10 +1,9 @@
 package com.example.order_api.controller;
 
-import com.example.order_api.dto.request.OrderRequest;
-import com.example.order_api.dto.response.OrderResponse;
-import com.example.order_api.dto.response.OrderResponseWithUser;
-import com.example.order_api.dto.response.OrderSummaryResponse;
-import com.example.order_api.repository.OrderRepository;
+import com.example.order_api.dto.request.order.OrderRequest;
+import com.example.order_api.dto.response.order.OrderResponse;
+import com.example.order_api.dto.response.order.OrderResponseWithUser;
+import com.example.order_api.dto.response.order.OrderSummaryResponse;
 import com.example.order_api.service.OrderService;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;

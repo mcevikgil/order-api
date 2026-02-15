@@ -1,6 +1,6 @@
 package com.example.order_api.controller;
 
-import com.example.order_api.dto.response.UserResponse;
+import com.example.order_api.dto.response.user.UserResponse;
 import com.example.order_api.service.UserService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

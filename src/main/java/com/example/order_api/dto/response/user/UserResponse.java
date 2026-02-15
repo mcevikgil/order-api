@@ -1,6 +1,6 @@
-package com.example.order_api.dto.response;
+package com.example.order_api.dto.response.user;
 
-import com.example.order_api.entity.Role;
+import com.example.order_api.enums.Role;
 
 import java.time.LocalDateTime;
 

@@ -1,5 +1,6 @@
 package com.example.order_api.entity;
 
+import com.example.order_api.enums.OrderStatus;
 import jakarta.persistence.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;

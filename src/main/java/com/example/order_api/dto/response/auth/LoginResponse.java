@@ -1,4 +1,6 @@
-package com.example.order_api.dto.response;
+package com.example.order_api.dto.response.auth;
+
+import com.example.order_api.dto.response.user.UserResponse;
 
 public class LoginResponse {
     private String token;

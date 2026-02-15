@@ -1,7 +1,7 @@
 package com.example.order_api.exception;
 
-import com.example.order_api.dto.response.ErrorResponse;
-import com.example.order_api.dto.response.ValidationErrorResponse;
+import com.example.order_api.dto.response.error.ErrorResponse;
+import com.example.order_api.dto.response.error.ValidationErrorResponse;
 import io.jsonwebtoken.JwtException;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.http.HttpStatus;
